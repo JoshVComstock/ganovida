@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GanoVida | Programa de Afiliados</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #182519;
+            box-shadow: none;
+        }
+        /* Active state for bottom nav */
+        .nav-active {
+            color: #182519;
+        }
+        .nav-active .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-variant": "#e5e2e1",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary": "#5d5f5d",
+                        "outline": "#747872",
+                        "outline-variant": "#c4c8c0",
+                        "inverse-primary": "#bbcbb8",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fcf9f8",
+                        "on-primary-container": "#95a593",
+                        "primary-fixed-dim": "#bbcbb8",
+                        "tertiary": "#735c00",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-fixed": "#e2e3e1",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c6c7c5",
+                        "tertiary-container": "#cba72f",
+                        "surface": "#fcf9f8",
+                        "surface-tint": "#536252",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#444842",
+                        "on-secondary-container": "#636563",
+                        "primary": "#182519",
+                        "on-secondary-fixed-variant": "#454746",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fcf9f8",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "primary-container": "#2d3b2d",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-surface": "#313030",
+                        "on-primary-fixed-variant": "#3c4a3c",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed": "#1a1c1b",
+                        "primary-fixed": "#d7e7d3",
+                        "on-primary-fixed": "#111f12",
+                        "secondary-container": "#e2e3e1",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "stack-unit": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Outfit"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background pb-20">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+<nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-2xl md:text-headline-md tracking-tighter text-primary">GanoVida</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#">Tienda</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">Afiliados</a>
+</div>
+<div class="flex items-center space-x-6 text-primary">
+<button class="material-symbols-outlined text-2xl" data-icon="search">search</button>
+<button class="material-symbols-outlined text-2xl" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-gutter items-center">
+<div class="space-y-8 md:space-y-12 max-w-xl order-2 lg:order-1">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-4 block">Únete a la familia</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight md:leading-none mb-6">Emprende con GanoVida</h1>
+<p class="font-body-lg text-body-lg text-secondary">Forma parte de nuestra red exclusiva de socios y comparte el bienestar con el mundo. Elegancia, salud y libertad financiera.</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-6 h-6 border border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<div>
+<h3 class="font-body-md font-semibold text-primary uppercase tracking-tight">Comisiones Premium</h3>
+<p class="font-body-md text-secondary">Obtén hasta un 25% por cada venta directa referida a través de tu plataforma.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-6 h-6 border border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<div>
+<h3 class="font-body-md font-semibold text-primary uppercase tracking-tight">Recursos de Marca</h3>
+<p class="font-body-md text-secondary">Acceso a material gráfico de alta fidelidad y guías de estilo exclusivas.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-6 h-6 border border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<div>
+<h3 class="font-body-md font-semibold text-primary uppercase tracking-tight">Soporte Prioritario</h3>
+<p class="font-body-md text-secondary">Gestor de cuenta personal para optimizar tu estrategia de crecimiento.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image Composition -->
+<div class="relative order-1 lg:order-2">
+<div class="aspect-[4/5] bg-surface-container relative overflow-hidden">
+<img alt="A sophisticated lifestyle product photography shot for GanoVida. The image features high-end organic wellness products arranged on a polished marble surface with soft, cinematic side-lighting. Minimalist composition with a muted color palette of forest green, alabaster, and soft greys. The atmosphere is calm luxury, resembling a high-end editorial spread in a premium fashion and wellness magazine." class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpuC0ft_ieZ8giLTKqSsczSb-eJ1UGasAzXYC2jfGJPkBxnylAOu2sssBT5KEEdSM21_p3m8SsvkpFV0lILO4Ut2Ez-uNijCLrC-A4USVjY1sAx6a4qktuJigBCB3EhBE5OqdBG6dDoysEsQJfz9YZF3XxAiM-DGZVN3lgIt1_ImI0QtqQYnzlQjfoSqM7lO2tPn62EkHcCvSgV27LBS1TA7tWyo9-wGxKAcpKO9LFYYW-njQe7IKR4w"/>
+</div>
+<div class="absolute -bottom-4 md:-bottom-8 left-4 md:-left-8 w-48 md:w-64 h-48 md:h-64 border border-outline-variant bg-background p-6 flex flex-col justify-end hidden sm:flex">
+<p class="font-display-lg text-4xl md:text-display-lg text-primary-container opacity-10 absolute top-4 right-4">01</p>
+<p class="font-label-caps text-label-caps text-primary mb-2">CALIDAD SUPERIOR</p>
+<p class="font-body-md text-secondary leading-tight text-sm md:text-base">Nuestros productos cumplen con los más altos estándares de pureza.</p>
+</div>
+</div>
+</section>
+<!-- Registration Form Section -->
+<section class="bg-surface-container-low py-20 md:py-32">
+<div class="max-w-[800px] mx-auto px-margin-mobile md:px-0">
+<div class="text-center mb-12 md:mb-16">
+<h2 class="font-headline-sm md:font-headline-md text-headline-sm md:text-headline-md text-primary mb-4">Registro de Afiliado</h2>
+<p class="font-body-md text-secondary">Completa el formulario para iniciar tu solicitud. Revisamos cada perfil meticulosamente.</p>
+</div>
+<form class="space-y-10 md:space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+<!-- Name -->
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">NOMBRE COMPLETO</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body-md text-primary form-input-focus transition-colors group-hover:border-primary placeholder:text-outline-variant" placeholder="Ej. Javier Montenegro" type="text"/>
+</div>
+<!-- Email -->
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">CORREO ELECTRÓNICO</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body-md text-primary form-input-focus transition-colors group-hover:border-primary placeholder:text-outline-variant" placeholder="javier@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+<!-- Instagram/Social -->
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">INSTAGRAM / WEB</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body-md text-primary form-input-focus transition-colors group-hover:border-primary placeholder:text-outline-variant" placeholder="@tuusuario" type="text"/>
+</div>
+<!-- Country -->
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">PAÍS DE RESIDENCIA</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body-md text-primary form-input-focus transition-colors group-hover:border-primary appearance-none">
+<option>Selecciona un país</option>
+<option>España</option>
+<option>México</option>
+<option>Colombia</option>
+<option>Argentina</option>
+<option>Chile</option>
+</select>
+</div>
+</div>
+<div class="relative group">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">¿POR QUÉ GANOVIDA?</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body-md text-primary form-input-focus transition-colors group-hover:border-primary resize-none placeholder:text-outline-variant" placeholder="Cuéntanos brevemente tu visión y cómo planeas promocionar la marca..." rows="3"></textarea>
+</div>
+<div class="flex items-center space-x-3 py-4">
+<input class="w-6 h-6 rounded-none border-outline text-primary focus:ring-0 cursor-pointer" id="terms" type="checkbox"/>
+<label class="font-body-md text-on-surface-variant text-sm select-none cursor-pointer" for="terms">Acepto los términos y condiciones del programa de afiliados.</label>
+</div>
+<div class="pt-8 flex justify-center">
+<button class="group relative w-full md:w-auto px-16 py-6 bg-primary text-on-primary font-label-caps text-label-caps tracking-widest overflow-hidden transition-all duration-300 hover:bg-opacity-90 active:scale-95" type="submit">
+<span class="relative z-10 uppercase">Unirse al Programa</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Newsletter / Minimal Footer Callout -->
+<section class="py-20 md:py-24 border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="text-center md:text-left">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-2">Suscríbete a nuestro Círculo</h2>
+<p class="font-body-md text-secondary">Recibe noticias sobre lanzamientos exclusivos y eventos privados.</p>
+</div>
+<div class="flex flex-col md:flex-row w-full md:w-auto gap-4">
+<input class="border-b border-outline-variant bg-transparent py-3 px-4 focus:border-primary outline-none font-body-md min-w-full md:min-w-[300px]" placeholder="Tu email" type="email"/>
+<button class="font-label-caps text-label-caps uppercase text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-white transition-all">Enviar</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 md:py-20 bg-surface-container dark:bg-inverse-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm text-primary">GanoVida</div>
+<p class="font-body-md text-on-surface-variant opacity-80">Excelencia en cada gota. Redefiniendo el bienestar moderno.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">NAVEGACIÓN</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Tienda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Nosotros</a></li>
+<li><a class="text-primary font-bold" href="#">Afiliados</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">AYUDA</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Términos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Envíos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">CONTACTO</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li>hola@ganovida.com</li>
+<li>+34 900 000 000</li>
+<li>Madrid, España</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 md:mt-20 pt-8 border-t border-outline-variant text-center">
+<p class="font-body-md text-on-surface-variant text-xs md:text-sm opacity-60">© 2024 GanoVida. Todos los derechos reservados.</p>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Tab Bar) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/95 backdrop-blur-md border-t border-outline-variant h-20 px-6 flex items-center justify-around">
+<a class="flex flex-col items-center gap-1 text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="storefront">storefront</span>
+<span class="font-label-caps text-[10px] uppercase">Tienda</span>
+</a>
+<!-- Central Prominent Button -->
+<a class="flex flex-col items-center gap-1 -mt-10" href="#">
+<div class="w-16 h-16 bg-primary rounded-full shadow-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="font-label-caps text-[10px] uppercase text-primary mt-1 font-bold">Productos</span>
+</a>
+<a class="flex flex-col items-center gap-1 nav-active transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="diversity_3">diversity_3</span>
+<span class="font-label-caps text-[10px] uppercase">Afiliados</span>
+</a>
+</div>
+<script>
+    // Micro-interaction for form inputs
+    document.querySelectorAll('input, textarea, select').forEach(input => {
+        input.addEventListener('focus', () => {
+            const label = input.parentElement.querySelector('label');
+            if(label) label.style.color = '#182519';
+        });
+        input.addEventListener('blur', () => {
+            const label = input.parentElement.querySelector('label');
+            if(label) label.style.color = '';
+        });
+    });
+
+    // Simple smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body></html>

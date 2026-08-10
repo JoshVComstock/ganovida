@@ -1,0 +1,117 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      // ---- Sistema de color GanoVida (Material Design tokens) ----
+      colors: {
+        "inverse-on-surface": "#f3f0ef",
+        "on-surface": "#1c1b1b",
+        "on-tertiary-fixed-variant": "#574500",
+        "surface-variant": "#e5e2e1",
+        "tertiary-fixed": "#ffe088",
+        secondary: "#5d5f5d",
+        outline: "#747872",
+        "outline-variant": "#c4c8c0",
+        "inverse-primary": "#bbcbb8",
+        "surface-container-highest": "#e5e2e1",
+        "on-tertiary": "#ffffff",
+        "on-error": "#ffffff",
+        background: "#fcf9f8",
+        "on-primary-container": "#95a593",
+        "primary-fixed-dim": "#bbcbb8",
+        tertiary: "#735c00",
+        "on-tertiary-fixed": "#241a00",
+        "secondary-fixed": "#e2e3e1",
+        "on-error-container": "#93000a",
+        "secondary-fixed-dim": "#c6c7c5",
+        "tertiary-container": "#cba72f",
+        surface: "#fcf9f8",
+        "surface-tint": "#536252",
+        error: "#ba1a1a",
+        "on-surface-variant": "#444842",
+        "on-secondary-container": "#636563",
+        primary: "#182519",
+        "on-secondary-fixed-variant": "#454746",
+        "on-background": "#1c1b1b",
+        "surface-container-low": "#f6f3f2",
+        "error-container": "#ffdad6",
+        "surface-container": "#f0eded",
+        "surface-bright": "#fcf9f8",
+        "on-secondary": "#ffffff",
+        "on-tertiary-container": "#4e3d00",
+        "primary-container": "#2d3b2d",
+        "surface-dim": "#dcd9d9",
+        "inverse-surface": "#313030",
+        "on-primary-fixed-variant": "#3c4a3c",
+        "tertiary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#1a1c1b",
+        "primary-fixed": "#d7e7d3",
+        "on-primary-fixed": "#111f12",
+        "secondary-container": "#e2e3e1",
+        "on-primary": "#ffffff",
+        "surface-container-high": "#eae7e7",
+        "surface-container-lowest": "#ffffff",
+        // Gris para placeholders de imagen (a reemplazar por fotos reales)
+        placeholder: "#d4d1cf",
+        // Dorado de marca — usado en el gancho "Afíliate y ahorra Bs. XX"
+        gold: "#c9a227",
+        "gold-dark": "#9a7b1c",
+        // WhatsApp (botón flotante / CTAs de pedido)
+        whatsapp: "#25d366",
+        "whatsapp-dark": "#1da851",
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        full: "0.75rem",
+      },
+      spacing: {
+        "container-max": "1440px",
+        gutter: "24px",
+        "margin-mobile": "20px",
+        "stack-unit": "8px",
+        "margin-desktop": "80px",
+      },
+      maxWidth: {
+        "container-max": "1440px",
+      },
+      fontFamily: {
+        "body-md": ["var(--font-outfit)", "sans-serif"],
+        "label-caps": ["var(--font-outfit)", "sans-serif"],
+        "display-lg-mobile": ["var(--font-playfair)", "serif"],
+        "headline-sm": ["var(--font-playfair)", "serif"],
+        "display-lg": ["var(--font-playfair)", "serif"],
+        "body-lg": ["var(--font-outfit)", "sans-serif"],
+        "headline-md": ["var(--font-playfair)", "serif"],
+      },
+      fontSize: {
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "label-caps": [
+          "12px",
+          { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" },
+        ],
+        "display-lg-mobile": [
+          "40px",
+          { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" },
+        ],
+        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "500" }],
+        "display-lg": [
+          "64px",
+          { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "600" },
+        ],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "300" }],
+        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "500" }],
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

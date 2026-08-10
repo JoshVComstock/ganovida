@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GanoVida | Producto Premium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-surface": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary": "#5d5f5d",
+                    "outline": "#747872",
+                    "outline-variant": "#c4c8c0",
+                    "inverse-primary": "#bbcbb8",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "background": "#fcf9f8",
+                    "on-primary-container": "#95a593",
+                    "primary-fixed-dim": "#bbcbb8",
+                    "tertiary": "#735c00",
+                    "on-tertiary-fixed": "#241a00",
+                    "secondary-fixed": "#e2e3e1",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c6c7c5",
+                    "tertiary-container": "#cba72f",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#536252",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#444842",
+                    "on-secondary-container": "#636563",
+                    "primary": "#182519",
+                    "on-secondary-fixed-variant": "#454746",
+                    "on-background": "#1c1b1b",
+                    "surface-container-low": "#f6f3f2",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f0eded",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#4e3d00",
+                    "primary-container": "#2d3b2d",
+                    "surface-dim": "#dcd9d9",
+                    "inverse-surface": "#313030",
+                    "on-primary-fixed-variant": "#3c4a3c",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#1a1c1b",
+                    "primary-fixed": "#d7e7d3",
+                    "on-primary-fixed": "#111f12",
+                    "secondary-container": "#e2e3e1",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "stack-unit": "8px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "body-md": ["Outfit"],
+                    "label-caps": ["Outfit"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+            overflow-x: hidden;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .image-zoom-hover:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky bg-surface z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center h-24 px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">GanoVida</a>
+<!-- Desktop Links -->
+<nav class="hidden md:flex gap-12 items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary pb-1 transition-all duration-300" href="#">Tienda</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Nosotros</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Afiliados</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-primary hover:text-primary-container transition-colors duration-300 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-2 -right-2 text-[10px] bg-primary text-on-primary w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<!-- Product Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Hero Image Gallery -->
+<div class="lg:col-span-7 space-y-gutter">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container border border-outline-variant/30 reveal-on-scroll" style="opacity:1; transform:none;">
+<img class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="A premium high-fidelity close-up of a minimalist Ganoderma product packaging in a serene, bright studio environment. The light-mode aesthetic features soft, diffused lighting hitting the sleek charcoal-colored bottle. The background is a clean, neutral alabaster with subtle architectural shadows, conveying a sense of luxury and wellness. The overall mood is sophisticated, clinical yet natural, aligning with high-fashion lifestyle editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwH0NgChG3UrHNywXU5nCAroos1VU6c310lil22SvND7CJ4gUM_cJkZu0OMO5f27w8iDnw9ozfS3qM-UTx8ZmICcK5qV8PdWAOSGtLz0Ai2hjBTtW-B71UkLWcQe6RxEpEmb_uhDGS-Ab5cdiv1SiY1tawmErPLNVGPbKfi_M6WikyI4CMSe_0FmSWFA2Yv9rGMXeDA6VVtZZCJusmbnOMbttLoAAAyqOVHkpTWx6MkvdkvkB_JG5BVA"/>
+</div>
+<div class="grid grid-cols-3 gap-gutter">
+<div class="aspect-square bg-surface-container overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover hover:opacity-80 transition-opacity cursor-pointer" data-alt="Detailed macro shot of organic Ganoderma mushroom texture against a pure white background, highlighting its intricate natural patterns. The lighting is high-key and surgical, emphasizing purity and high-end botanical quality in a minimalist, modern aesthetic consistent with GanoVida branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8dpHAyCLFmxlZN5UXVdniJ7GCTQZDAQ6RC73ZOXzO3bymGWh7w0wNSD6eZSeF37FGUYF9FJgwt_NCv7ffEyUU_KrgQ3Zt9CafZD5duOhzzhTKV41Nq7rfZsnp-B0agYSusqQ90LE8kiEk3FSUnW_LsIVqKMo2deiUFtWx_dFJLtu5LQNaW5iTPv8s35pSrKLb-u_-qCJMMkqUURheVq6LbhIW2F2cO1fRAnhQCxy1CRYrm0vnMInPIw"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover hover:opacity-80 transition-opacity cursor-pointer" data-alt="An editorial lifestyle shot featuring a minimalist glass of water and the product bottle on a white marble surface. Sunlight streams through a window creating sharp, architectural shadows. The color palette is dominated by off-whites, greys, and deep forest green accents, reflecting a calm luxury atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgOMMewYWAII9Hk541pJnSe07xUegl-7ldHbeGD90TMWYAH_iQSD043rNg9RlLW1_ltmhvvmtux2Q3i5-KkVSNUaFPaiFHBinrIeMR8nx4yfEousHHoqGjCx0CAu4g8I6KL03qQdrhvc0Qk7pwBKu6UmJfeu5GZZX3LTR-BnUvyAbHG5CJ1NIcis8jyqijBrl_IGT4HgijPmUJ8qXSHCf5kkYYfQA8wlOVgnW6TMEewHJtdlrnhfjF-w"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover hover:opacity-80 transition-opacity cursor-pointer" data-alt="Minimalist packaging design showcase of GanoVida, featuring clean sans-serif typography on a matte charcoal box. The box sits on a flat, neutral surface with zero distractions, emphasizing high-end product design and premium pharmaceutical-grade aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs0XhmwmSk8hA64vJPFmGTYx56oYoIRR1Q4FtNV5j54SVBSogOy7hcFSANj3CkFouCTns7QMB5DLDCXZm3HK2CCOqxaoxUo2Ae8rBd0xSN9AeRi__-hBv2FabfozWf2tsWlUkcqCbYk9NYRNWTRUn13cJIu6e6rTxCJc5fMMAEjA_5EwmFgZ8fy0aiQ0EGobvwQaVfOFngz5w92e-QAxK08zq62XpyIHwgBHpWIM4CmbOMmKsEahdFsA"/>
+</div>
+</div>
+</div>
+<!-- Product Details -->
+<div class="lg:col-span-5 sticky top-32">
+<div class="reveal-on-scroll" style="opacity:1; transform:none; transition-delay: 200ms;">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">COLECCIÓN PREMIUM</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Esencia GanoVida</h1>
+<p class="font-headline-sm text-headline-sm text-primary mb-8">€125.00</p>
+<div class="h-px w-full bg-outline-variant mb-8"></div>
+<div class="space-y-6 mb-12">
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                            Una fórmula magistral diseñada para el equilibrio total. Elaborada con extractos puros de Ganoderma lucidum, recolectados bajo estándares éticos y procesados para preservar su potencia biológica.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'opsz' 20;">check</span>
+<span class="font-body-md text-body-md">Refuerzo inmunológico de espectro completo</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'opsz' 20;">check</span>
+<span class="font-body-md text-body-md">Adaptógeno natural para la gestión del estrés</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'opsz' 20;">check</span>
+<span class="font-body-md text-body-md">Pureza certificada en laboratorio</span>
+</li>
+</ul>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4">
+<button class="w-full py-5 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-primary-container transition-all duration-300 active:scale-[0.98]">
+                            Añadir al Carrito
+                        </button>
+<button class="w-full py-5 border border-outline text-primary font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-surface-variant transition-all duration-300 active:scale-[0.98]">
+                            Contactar Consultor
+                        </button>
+</div>
+<div class="mt-12 flex items-center justify-between py-6 border-t border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">local_shipping</span>
+<span class="font-body-md text-body-md text-secondary">Envío Express Gratuito</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span class="font-body-md text-body-md text-secondary">Garantía de Pureza</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Details Section (Bento Inspired) -->
+<section class="mt-32 md:mt-48">
+<h2 class="font-headline-md text-headline-md text-primary mb-16 text-center italic">El Arte de la Longevidad</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low p-10 flex flex-col justify-between aspect-square reveal-on-scroll">
+<span class="material-symbols-outlined text-4xl text-primary">eco</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Origen Orgánico</h3>
+<p class="text-on-surface-variant">Cultivado en las tierras altas, siguiendo ciclos lunares para maximizar la absorción de nutrientes y la vitalidad del hongo.</p>
+</div>
+</div>
+<div class="md:col-span-1 bg-surface-container-highest overflow-hidden relative reveal-on-scroll" style="transition-delay: 100ms;">
+<img class="w-full h-full object-cover" data-alt="Cinematic shot of misty mountain peaks where Ganoderma is harvested. The atmosphere is ethereal, cold, and mysterious. Deep greens and cool blues dominate the palette, reinforcing the brand's connection to pristine, untouched nature and ancient wisdom." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHLM6yFt0hZFHuFygswkOVbFGqOWthNjfZJXozVk4zHqgGSFIvoMlBCQNLfPZAenn_9prvGoFzSE617MJmTq3j85ilXdl-gfKYcb80IKL-33AyTc9pM_-AzpdUu_euMR-LZ55hlRmIE2SeiSXNgVwZ7pdrkhyH_-lRRBOGyt9tKkaAcHDVhzQGXUXpLQB9waqazb4TCU6Ry9G3y79MaVLrp4YHmmpftjsGcXUuby3daqRZbaZaeZ_wFQ"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div class="bg-primary p-10 text-on-primary flex flex-col justify-center gap-6 reveal-on-scroll" style="transition-delay: 200ms;">
+<h3 class="font-headline-sm text-headline-sm">Ciencia Moderna</h3>
+<p class="opacity-80 leading-relaxed">Combinamos rituales ancestrales con extracción por CO2 supercrítico para garantizar que cada gota contenga el 100% de los triterpenos activos.</p>
+<a class="font-label-caps text-label-caps border-b border-on-primary/30 pb-1 self-start hover:border-on-primary transition-colors" href="#">Leer más</a>
+</div>
+</div>
+</section>
+<!-- Recommendations Section -->
+<section class="mt-32 md:mt-48">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">TE PODRÍA GUSTAR</span>
+<h2 class="font-headline-md text-headline-md text-primary">Completa tu Ritual</h2>
+</div>
+<a class="font-body-md text-body-md text-primary border-b border-primary" href="#">Ver todo</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist vertical bottle of GanoVida Reishi Extract, Charcoal glass with a white label, standing on a sand-colored surface. Bright, high-end editorial lighting, sharp focus, 8k resolution, minimalist gallery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOMu74MFRrFaWajhqUczSk64kpMp54yV1AaP9O6j3wQ_O4lXq-43awC_W8ylw2f5ggqGyNNswqP__e37FTQ_auOzkSAmuFJtFZCzkGpIhzsaiIPxBitJuNU2jzPTeEWq61Em1eyfkaZEetjP5xxkqnSJeE888NiZnMrL3dMe43LD3EhE4dT-XX9B91IQ5SzT6HzVCVmuMuyR1TWKCuguF8SNh1_f6p4Jo2oAtf07y-8CJjUij6RItUDQ"/>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Concentrado de Reishi</h3>
+<p class="font-body-md text-secondary">€85.00</p>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of a luxury ceramic cup containing dark, rich Ganoderma tea. Soft steam rising. Minimalist setting, wooden table, soft morning sunlight, serene and calming vibe. High-fashion lifestyle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL6fbIJ1pTmmYslFoANCz3BALF1wRt77yFgvhnajWPgCTTZyCqLGaPGRBn2i0YxflZbKh_OTge0dRLGq7aNIvUdeUhvonFp0AnE57aYTt7gNkHhNRBfvCH6pC2NVPf4-BP5mU61FFxzEie_CZJfCOfT0nvrp2I3rkqnd5DGaZn76BYrSzDYGRzDifBNI8C1o54XdmTzbWww0W86JBYzsFVndzi_LtdDXvp6Via1RmYFsoOXjfYbD5GaQ"/>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Infusión Ancestral</h3>
+<p class="font-body-md text-secondary">€45.00</p>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Sleek, slim box of GanoVida supplements. Modern white packaging with embossed charcoal logo. Placed on a glass shelf with soft-focus architectural background. Premium, expensive feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQIQc6xRayOGWZN3YkaH_-Rmps5RHmFGUOAXYWml12a0QU26bjr6YhBZRzG-57BA-GSAgFybnFoU-OvjdLFkH_qzBJ0rxrvmj2BJ2hV1a82a0OUwuL_26aR0dGcm7auEAUvyH7hNCBVfLN5RigVs8rzNTbV0KeRp3J79Ghk_oQ1IMoeDliveiYJ1rvBx5tgW69VuQF-klpVOpkmz6E3WdYRbJQidkgk8aAv2dL-jV9t_NXjOL9TsIHfw"/>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Cápsulas Vitality</h3>
+<p class="font-body-md text-secondary">€92.00</p>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Handcrafted bamboo whisk and a small bowl of Ganoderma powder. Minimalist, zen composition. Soft neutral tones, natural textures, peaceful mood, professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIvlkn_K0UMj4CvKiaq6y4zr_RLohFP9Bn0LGl45JCMX-H1vME4OrOFm3Eodrpu5iQuSLN6XEjpGr1FRKX3gjCLsdXD_8ZOr58IpSqu7_UYXGAU2Pnbw0LlsNlUuE59l6brrTq1m3D0GZgCEEyWVRXMqOrQYkUI9shzfeSh6VkATs3KcvU93EV6MNtqNpg2rJtPurX5b5SYArc0B_w_UEaCNjngLiMIZ9NcWVFyZu_BhCrBcdWRo1eRg"/>
+</div>
+<h3 class="font-body-md text-body-md text-primary mb-1">Kit de Preparación</h3>
+<p class="font-body-md text-secondary">€110.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div class="space-y-6">
+<a class="font-headline-sm text-headline-sm text-primary" href="#">GanoVida</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[240px] mx-auto md:mx-0">
+                    Elevando el bienestar humano a través de la sabiduría de la naturaleza y la precisión de la ciencia.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Compañía</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sostenibilidad</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Prensa</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">Asistencia</span>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Envíos</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Devoluciones</a>
+</div>
+<div class="space-y-6">
+<span class="font-label-caps text-label-caps text-primary">Newsletter</span>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-outline py-2 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="Email" type="email"/>
+<button class="absolute right-0 bottom-2">
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-20 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/30 gap-6">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 GanoVida. Todos los derechos reservados.</p>
+<div class="flex gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Términos</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Interaction logic for cart simulation
+        let cartCount = 0;
+        const cartBadge = document.querySelector('.relative span');
+        const addToCartBtn = document.querySelector('button.bg-primary');
+
+        if(addToCartBtn) {
+            addToCartBtn.addEventListener('click', () => {
+                cartCount++;
+                cartBadge.innerText = cartCount;
+                
+                // Simple visual feedback
+                const originalText = addToCartBtn.innerText;
+                addToCartBtn.innerText = "Añadido";
+                addToCartBtn.style.backgroundColor = "#536252";
+                
+                setTimeout(() => {
+                    addToCartBtn.innerText = originalText;
+                    addToCartBtn.style.backgroundColor = "";
+                }, 2000);
+            });
+        }
+    </script>
+</body></html>

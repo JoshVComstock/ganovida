@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GanoVida | Catálogo de Estilo de Vida</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-surface": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary": "#5d5f5d",
+                    "outline": "#747872",
+                    "outline-variant": "#c4c8c0",
+                    "inverse-primary": "#bbcbb8",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "background": "#fcf9f8",
+                    "on-primary-container": "#95a593",
+                    "primary-fixed-dim": "#bbcbb8",
+                    "tertiary": "#735c00",
+                    "on-tertiary-fixed": "#241a00",
+                    "secondary-fixed": "#e2e3e1",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c6c7c5",
+                    "tertiary-container": "#cba72f",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#536252",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#444842",
+                    "on-secondary-container": "#636563",
+                    "primary": "#182519",
+                    "on-secondary-fixed-variant": "#454746",
+                    "on-background": "#1c1b1b",
+                    "surface-container-low": "#f6f3f2",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f0eded",
+                    "surface-bright": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#4e3d00",
+                    "primary-container": "#2d3b2d",
+                    "surface-dim": "#dcd9d9",
+                    "inverse-surface": "#313030",
+                    "on-primary-fixed-variant": "#3c4a3c",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#1a1c1b",
+                    "primary-fixed": "#d7e7d3",
+                    "on-primary-fixed": "#111f12",
+                    "secondary-container": "#e2e3e1",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "stack-unit": "8px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "body-md": ["Outfit"],
+                    "label-caps": ["Outfit"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Reveal animation for cards */
+        .product-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center h-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">GanoVida</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex gap-10 items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary pb-1 transition-all duration-300 ease-in-out" href="#">Tienda</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Nosotros</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Afiliados</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<button class="text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-primary hover:opacity-70 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section / Title -->
+<section class="pt-20 pb-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-2xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Colección Curada</h1>
+<p class="font-body-lg text-body-lg text-secondary">Descubre nuestra selección de bienestar integral, diseñada para elevar tu ritual diario con pureza y sofisticación arquitectónica.</p>
+</div>
+</section>
+<!-- Filters & Sorting Bar -->
+<section class="sticky top-24 z-40 bg-surface/90 backdrop-blur-sm border-b border-outline-variant/30 py-4 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<!-- Category Chips -->
+<div class="flex gap-4 overflow-x-auto hide-scrollbar w-full md:w-auto pb-2 md:pb-0">
+<button class="px-6 py-2 bg-primary text-white font-label-caps text-label-caps whitespace-nowrap">Todos</button>
+<button class="px-6 py-2 bg-transparent border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:border-primary transition-colors whitespace-nowrap">Suplementos</button>
+<button class="px-6 py-2 bg-transparent border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:border-primary transition-colors whitespace-nowrap">Bienestar</button>
+<button class="px-6 py-2 bg-transparent border border-outline-variant text-on-surface-variant font-label-caps text-label-caps hover:border-primary transition-colors whitespace-nowrap">Accesorios</button>
+</div>
+<!-- Sorting -->
+<div class="flex items-center gap-2 self-end md:self-auto">
+<span class="font-label-caps text-label-caps text-secondary">ORDENAR POR:</span>
+<select class="bg-transparent border-none focus:ring-0 font-label-caps text-label-caps text-primary cursor-pointer pr-8">
+<option>DESTACADOS</option>
+<option>PRECIO: MENOR A MAYOR</option>
+<option>PRECIO: MAYOR A MENOR</option>
+<option>LO MÁS NUEVO</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-40">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-16">
+<!-- Product 1 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Minimalist high-end glass bottle of botanical serum on a matte stone pedestal. High-key soft lighting with long elegant shadows. Neutral color palette of whites and soft greys. Editorial product photography style for a luxury health brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGCAP0BcIDWJDkWVrqpaqWgRt2-qKnQZ9bGcj0oyQo0DsDKuxrcTyaRKjnW7fip4eC9oRpnen1hROrDLl3jorKPYY1WFQTZCTqfLVUMpsYAxG39K0MtRLE1y0J7IwNqCzPWydtD0euHd-IvESdDUlKcasY3K9pU6dOzBv1JFKxjhbdAi9ZTVcvMa9tGkCL1sqHPwv56mV467Zyrk8_tsYJeeN7Cw3cNh686IOG5mu-WXFPwfahDoxvMw"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/80 backdrop-blur-md px-3 py-1 font-label-caps text-[10px] text-primary">NUEVO</span>
+</div>
+</div>
+<div class="text-left space-y-1">
+<h3 class="font-body-md text-body-md text-primary tracking-tight">Esencia de Ganoderma Orgánico</h3>
+<p class="font-body-md text-body-md text-secondary">$85.00</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Sleek modern ceramic tea set with a matte finish in a soft charcoal grey. Shot in a minimal Japanese-inspired setting with natural window light. The composition is balanced and serene, emphasizing clean lines and architectural form. Calm luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJzJ_eQMhWx5ozWYS5rR2DxiZIglgZQXYaojcXhY5vj1DkYzEgpg4YHwz6qW0Kca1tqfoePjdSzm-oroZhIR_uEYtLtMXcgmFQU5L7mS5ZVs1gFHeiu7I-1UjC0wDpPb6qPrqEEN9--dEtXhhykJrdLlVqGIbxvA5xGmUK6uaWJjALS3eZyDb9EuKjNbH9t6pS8tEpjIMoOKm2Q7-50W-C8t6-kZjAKuypMKprEmQ2QTocUSvjBPKI2g"/>
+</div>
+<div class="text-left space-y-1">
+<h3 class="font-body-md text-body-md text-primary tracking-tight">Kit Ceremonial de Bienestar</h3>
+<p class="font-body-md text-body-md text-secondary">$120.00</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist white pouch of premium functional mushroom powder, resting on a clean white linen surface. The background is a soft beige tone. High-end retail packaging design, very clean typography. Bright, airy, and clinical yet luxurious lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr5fASnu8jZIwpHbuB76khmLsXk_WaUtRGMDYGKLmcjQxc0CveBq55ajDN049bwpDatnjGXb1yfRaaXbn2ElIxzxpUOmZ7tBcyztt8TwsfeYi4rQObjgumpwLygTmLaeHrEwFYlGO5To7nKp8QCLbsjXa5wOjrj0NLma9jj9s5LzYgeYQcZeSceeKgH_VWyhsbU40q8gRNd5Cw2x8RcVwmYnsnBKEB5Ew0GEP_LbI_1FwQ2ryBNz2DTg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white px-3 py-1 font-label-caps text-[10px]">LIMITED</span>
+</div>
+</div>
+<div class="text-left space-y-1">
+<h3 class="font-body-md text-body-md text-primary tracking-tight">Complejo Reishi Adaptógeno</h3>
+<p class="font-body-md text-body-md text-secondary">$64.00</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A macro shot of a single, highly detailed drop of golden herbal oil falling into a clear glass bowl of water. The background is a soft, out-of-focus forest green. Sophisticated, clean, and scientific atmosphere. High contrast between the golden drop and the neutral surrounding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFfNnBe5Tyk8mbOvb-vxkpPlqyPIQK24XGFoUsVDd_ASOiGZU3-srd1pKqmmZ6amGmcgNY_6O4ZrOKsCXbqEO-VZPkLl06XRnmgnrpOl4hhpHElgTx-zWykawolNsCMek_5y-3dqr3auRX2kvffJI1ftZg6j9WFMJ6t7K7DlNCm5M3b6MRwrFz4-ViP-22hEYsFQIRW8-QZc1YgfZ6MWrquv63i5HFuMw0dFyYi1x0Zr7VQO8LD5-2WA"/>
+</div>
+<div class="text-left space-y-1">
+<h3 class="font-body-md text-body-md text-primary tracking-tight">Elixir Vital de Bosque</h3>
+<p class="font-body-md text-body-md text-secondary">$95.00</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A collection of minimal glass vials containing different botanical extracts arranged in a precise, architectural grid on a light grey concrete surface. Bright afternoon sun creates sharp, dramatic shadows. Scientific luxury aesthetic with a high-fashion editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrkgy6Em9np1rcBOF3JQ9WlHoMGO28KQdbZscT_eJikAJclaZ9gZhB-LnadvbxHLfOdiXLIYWHXOmxk-_qYM_NSyey-VkLlkJ0SGvCa6x3MZds_cMtsprU7ty-9kBSLz_8OMz7OWAsUpAULDByNTjMP27vfa0fENdUstBe0UAVt5VKodJnCUdwceJ4jW-z-2zMTS41lzDx91mp7I3WFEHcHBLgb20FoM78HSSnUiPDr6oa2G78GQk5TQ"/>
+</div>
+<div class="text-left space-y-1">
+<h3 class="font-body-md text-body-md text-primary tracking-tight">Colección de Extractos Puros</h3>
+<p class="font-body-md text-body-md text-secondary">$210.00</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A modern, sculptural glass teapot with a built-in infuser, filled with a vibrant amber herbal tea. The teapot sits on a minimalist white table in a bright sunlit room. Soft curtains in the background. The aesthetic is clean, luxurious, and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvHaYgUbVCfDLbBSOTaHIh08VUtXQpkelkm4w8ffvqZzmKmaztnYa0qRBD8E2sfqyXRUhaC8MfAuc68y5lym42ihVfvJQWu8qlhWciQ3Lb0RPWXa7hhP-EuYrjNI1kqOoO1WsO2Qy1_lyJaocXkiDCu3R-DjPXGSNz6DjwD6P08dQ6aiHGZygwOz2Ly1fJDF-y6WeNqbF00nYUUCvBFpk0m1yx64PkBzMCsoUTRdowoSu4YWvus3n1bw"/>
+</div>
+<div class="text-left space-y-1">
+<h3 class="font-body-md text-body-md text-primary tracking-tight">Infusor de Vidrio Templado</h3>
+<p class="font-body-md text-body-md text-secondary">$45.00</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex justify-center items-center gap-8">
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex gap-6 font-label-caps text-label-caps">
+<span class="text-primary border-b border-primary">01</span>
+<span class="text-outline hover:text-primary cursor-pointer transition-colors">02</span>
+<span class="text-outline hover:text-primary cursor-pointer transition-colors">03</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="bg-surface-container py-32">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Únete a nuestra comunidad</h2>
+<p class="font-body-md text-body-md text-secondary mb-10 max-w-md mx-auto">Suscríbete para recibir lanzamientos exclusivos, artículos de bienestar y acceso anticipado a nuestras colecciones.</p>
+<form class="max-w-md mx-auto flex gap-0 border-b border-outline">
+<input class="bg-transparent border-none w-full py-4 px-0 font-label-caps text-label-caps focus:ring-0 placeholder:text-outline-variant" placeholder="TU CORREO ELECTRÓNICO" type="email"/>
+<button class="font-label-caps text-label-caps text-primary py-4 hover:opacity-60 transition-opacity" type="submit">UNIRSE</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div class="space-y-6">
+<h2 class="font-headline-sm text-headline-sm text-primary">GanoVida</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[200px] mx-auto md:mx-0">Redefiniendo el bienestar a través de la pureza y el diseño.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary">COMPRA</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Nuevos Ingresos</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Best Sellers</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Suscripciones</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary">AYUDA</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Envíos</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Términos</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary">SOCIAL</h4>
+<div class="flex justify-center md:justify-start gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-outline-variant/20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-[12px] text-on-surface-variant opacity-80">© 2024 GanoVida. Todos los derechos reservados.</p>
+<div class="flex gap-4 opacity-60">
+<span class="material-symbols-outlined">payments</span>
+<span class="material-symbols-outlined">credit_card</span>
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        // Simple Intersection Observer for reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Hover Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GanoVida | Café Premium y Bienestar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-variant": "#e5e2e1",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary": "#5d5f5d",
+                        "outline": "#747872",
+                        "outline-variant": "#c4c8c0",
+                        "inverse-primary": "#bbcbb8",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#fcf9f8",
+                        "on-primary-container": "#95a593",
+                        "primary-fixed-dim": "#bbcbb8",
+                        "tertiary": "#735c00",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-fixed": "#e2e3e1",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c6c7c5",
+                        "tertiary-container": "#cba72f",
+                        "surface": "#fcf9f8",
+                        "surface-tint": "#536252",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#444842",
+                        "on-secondary-container": "#636563",
+                        "primary": "#182519",
+                        "on-secondary-fixed-variant": "#454746",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fcf9f8",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#4e3d00",
+                        "primary-container": "#2d3b2d",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-surface": "#313030",
+                        "on-primary-fixed-variant": "#3c4a3c",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary-fixed": "#1a1c1b",
+                        "primary-fixed": "#d7e7d3",
+                        "on-primary-fixed": "#111f12",
+                        "secondary-container": "#e2e3e1",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "stack-unit": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Outfit"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+            scroll-behavior: smooth;
+        }
+        .hero-reveal {
+            animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-24 px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-4">
+<img alt="GanoVida Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLv_-QlmCqUOWxOcHHZGO1uynBbCHkShZtF1BFaeZlQ8ge4ZgyPlx1pdrv5GKN-z5PMnoH6UpfUxRVhzlXbBqXkOlo-nRKxnuwYoFXKxui6JJlN-vymIesQ2O7a3Quu1UqXGecBMpgmTL06yQbRpallHIEaK4vnwFav-soe987IfhoiTfxBTWZa3HtCHO5Cm1G-bvCGnPM6Gyaq50Wg9ythcdfTFCx09tY6haSgRt4jr2VwdMSakglBoPMXo"/>
+<span class="font-headline-md text-headline-md tracking-tighter text-primary">GanoVida</span>
+</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary border-b border-primary pb-1" href="#">Tienda</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Nosotros</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Afiliados</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform" data-icon="search">search</button>
+<button class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative" data-icon="shopping_bag">
+                    shopping_bag
+                    <span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+</button>
+<button class="md:hidden material-symbols-outlined" data-icon="menu">menu</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop w-full grid md:grid-cols-12 items-center gap-gutter">
+<div class="md:col-span-6 z-10 hero-reveal">
+<span class="font-label-caps text-label-caps text-secondary mb-6 block">COLECCIÓN ARTESANAL 2024</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-8 leading-[1.1]">
+                        La esencia del <br/><span class="italic font-normal">bienestar</span> en cada grano.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-12">
+                        Descubre una experiencia sensorial superior donde el café premium se encuentra con las propiedades milenarias del Ganoderma.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-block bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps text-center uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-colors" href="#">
+                            Explorar Tienda
+                        </a>
+<a class="inline-block border border-primary text-primary px-12 py-5 font-label-caps text-label-caps text-center uppercase tracking-widest hover:bg-surface-container-low transition-colors" href="#">
+                            Nuestra Historia
+                        </a>
+</div>
+</div>
+<div class="md:col-span-6 relative h-[600px] hero-reveal" style="animation-delay: 0.2s;">
+<div class="absolute inset-0 bg-surface-container-low -z-10 transform translate-x-12 translate-y-12"></div>
+<img class="w-full h-full object-cover" data-alt="A high-resolution, editorial style photograph of a premium bag of GanoVida coffee sitting on a minimalist marble kitchen counter. Soft morning sunlight filters through a window, creating long, elegant shadows. The scene is clean, bright, and luxurious, emphasizing a modern light-mode aesthetic with neutral tones of alabaster, charcoal, and forest green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBifxpDCcW0W1IheEIw7ZSeGOs1aCIrJ51X12LJGJ50XBrwa_YwJij9VMADG-QjnVoEb1Ehg3eRPWaCF_v7qTz5dHZaga6OFzujuBirULkiwYhFOhrs__tH2IVA8sBTDl6CLXm-nCRokoquhMCpY_yIhkF8bz8V5_t2xVN6KsKiLSj6puB6gznXAZ5B5Il8Lu2gkyB-2Kaa4tej6HM1_dizX6d6TZLtzcTWMbrlFOOjuxsVj7iyatnheQ"/>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-32 md:h-40"></div>
+<!-- Featured Section (Bento Grid Style) -->
+<section class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Selección de Especialidad</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Productos curados para aquellos que buscan el equilibrio perfecto entre sabor intenso y vitalidad natural.</p>
+</div>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-all" href="#">Ver todos los productos</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter h-auto">
+<!-- Large Feature -->
+<div class="md:col-span-2 group">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up architectural shot of roasted coffee beans and a piece of raw Ganoderma lucidum mushroom on a minimalist matte black ceramic plate. The lighting is dramatic and precise, highlighting textures and deep earth tones. Minimalist luxury lifestyle photography with a focus on natural ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCRsVzMgkeCd8PRcmlEc8m_ub7mf6ut677nwD6H5R9kwh0aIsPJ__eS8cePtZnX2f9-AHKufl8_KYzyvkMEUwn2cA9TG950RTPUrNtHal4_2tcoZ4uAG8L6hdL7BoT4TJzOPUxi3HODcDLwamR47YcyFeZh8CHnCldXPnd0zZjZ4fQSdLXfj01eVSdBxqV_S7DGIz6G6ZUiOmYLrPB9lNpBbNE8F25LkUQXzHjBUV4YctDOutxxjdUg"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-caps text-label-caps text-secondary">ORIGEN ÚNICO</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-1">GanoVida Black Signature</h3>
+</div>
+<span class="font-body-md text-body-md text-primary">$45.00</span>
+</div>
+</div>
+<!-- Vertical Stack 1 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist product photography of a glass of iced latte with a swirl of dark coffee being poured into milk. Set against a clean, off-white background with sharp shadows. The mood is fresh, modern, and high-end editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkepn4Vi3gpS5nk70-NpNZZsgiiaxwIDsSJmKSwMMXKyWdgnmB4hCmtA7pOHtP8YRvmEM8S4FE011S0mhZAoVlc9EDfYJ-eWFbtQ922fYU1_L7ZJi95qmfQxjwIqJ_TIHnTWFCGviKDXr8WTaUhl5H7rptbCjicwXjb-4D1z-hWf1O-msZLOoq1MccM_7i7TEQ1aMbhmSubmpg_0nwVDDjJScfv_9SnV77sBnm6XiJAihjtghTr9CV-A"/>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary">BEBIDAS FRÍAS</span>
+<h3 class="font-body-lg text-body-lg text-primary mt-1">Kit Cold Brew Vitalidad</h3>
+<span class="font-body-md text-body-md text-primary mt-2 block">$38.00</span>
+</div>
+</div>
+<!-- Vertical Stack 2 -->
+<div class="group">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A lifestyle shot of a minimalist wooden coffee scoop filled with finely ground coffee. The background is a soft-focus clean kitchen environment. Warm neutral lighting, very clean and sophisticated composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp5yaFR--Wjh_qs1T39xXTbNo0CN8twGUnZ08Q4UwFPHYljZSczc-09JVXgfvd9auDYIV52-kO2gvUFoQY_cA5HRiFcc7U2IYZg0Xhtxg7ufJ5qp1l2ELuNyTDZYfHrjivlSh7mJzEj78315MxjAnKgkJLfpo_FA8qrEwvGMYzhxOvENUWTvKqgLhOeSYbDSkZTbdzlkL8-MYDOn5XGFW82Qyfupct2HsKe15pbDUlHa-WmBV1DjWojQ"/>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary">ACCESORIOS</span>
+<h3 class="font-body-lg text-body-lg text-primary mt-1">Cuchara de Madera Minimalista</h3>
+<span class="font-body-md text-body-md text-primary mt-2 block">$12.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-32 md:h-40"></div>
+<!-- Brand Value / Statement -->
+<section class="bg-primary py-32 text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<span class="font-label-caps text-label-caps tracking-[0.3em] opacity-60 mb-8 block">NUESTRA FILOSOFÍA</span>
+<blockquote class="font-display-lg text-display-lg-mobile md:text-display-lg max-w-4xl mx-auto leading-tight italic">
+                    "Creemos que el ritual diario del café debe nutrir no solo el espíritu, sino también el cuerpo."
+                </blockquote>
+<div class="mt-16 flex justify-center gap-12 items-center opacity-60">
+<div class="text-center">
+<span class="font-display-lg text-[48px] block">100%</span>
+<span class="font-label-caps text-label-caps">Orgánico</span>
+</div>
+<div class="w-px h-12 bg-on-primary/20"></div>
+<div class="text-center">
+<span class="font-display-lg text-[48px] block">0%</span>
+<span class="font-label-caps text-label-caps">Aditivos</span>
+</div>
+<div class="w-px h-12 bg-on-primary/20"></div>
+<div class="text-center">
+<span class="font-display-lg text-[48px] block">24/7</span>
+<span class="font-label-caps text-label-caps">Energía Natural</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Grid (Editorial) -->
+<section class="py-32 md:py-40">
+<div class="max-w-container-max mx-auto px-margin-desktop grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A wide-angle, cinematic view of a misty coffee plantation in the highlands at dawn. The light is soft and ethereal, with deep greens and cool blue tones. Minimalist composition with a single coffee tree in sharp focus in the foreground. High-end nature photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3kHThhpYQLEb952yssfPw0uKesoeEhIJQx5jMuTraPIpDjqwodCnH7fxnqxXULr5eEUHQrPnDi1g1pjqQjaNDtqBUnXWtNvUInzpxBU4m5RJSnCbhBTuq5Rd8R85qTwzm9rGitj7um_yekfelflBhDqUILBPkWufpWYf1ymoCIQyHpuJK9of6aS_Y5MHdCDvRMOMGUx-vhiaI009bNk8fVxfrv0EE5bVZLhzHhhNhgS5Tokf2Uf2MWw"/>
+</div>
+</div>
+<div class="md:col-span-4 md:col-start-9">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Compromiso con el Origen</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                        Cada grano de GanoVida proviene de cultivos sostenibles en las tierras altas. Seleccionamos cuidadosamente a nuestros agricultores para garantizar que cada taza respete el medio ambiente y a las comunidades locales.
+                    </p>
+<a class="font-label-caps text-label-caps text-primary flex items-center gap-2 group" href="#">
+                        CONOCER MÁS <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="bg-surface-container-low py-24 border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center max-w-2xl">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Únete a nuestra comunidad</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">Suscríbete para recibir noticias sobre lanzamientos exclusivos y consejos de bienestar.</p>
+<form class="flex flex-col sm:flex-row gap-0 border border-outline focus-within:border-primary transition-colors">
+<input class="flex-grow px-6 py-4 bg-transparent border-none focus:ring-0 font-body-md" placeholder="Correo electrónico" required="" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-on-primary-fixed-variant transition-colors" type="submit">
+                        Suscribirse
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<!-- Brand & Info -->
+<div class="col-span-1">
+<span class="font-headline-sm text-headline-sm text-primary block mb-6">GanoVida</span>
+<p class="font-body-md text-on-surface-variant opacity-80 mb-6">Elevando el estándar del café funcional con pureza y diseño.</p>
+</div>
+<!-- Quick Links -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Compañía</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Nosotros</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Impacto</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Prensa</a></li>
+</ul>
+</div>
+<!-- Support -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Ayuda</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Envíos</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Términos</a></li>
+</ul>
+</div>
+<!-- Social -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Síguenos</h4>
+<div class="flex justify-center md:justify-start gap-4">
+<a class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="public">public</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Copyright -->
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-md text-body-md text-on-surface-variant opacity-70">© 2024 GanoVida. Todos los derechos reservados.</span>
+<div class="flex gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">Cookies</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple parallax or scroll interactions can be added here
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-sm');
+                nav.classList.remove('h-24');
+                nav.classList.add('h-20');
+            } else {
+                nav.classList.remove('py-2', 'shadow-sm');
+                nav.classList.remove('h-20');
+                nav.classList.add('h-24');
+            }
+        });
+    </script>
+</body></html>
