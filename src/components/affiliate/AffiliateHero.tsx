@@ -103,6 +103,14 @@ export default function AffiliateHero() {
           </ol>
         </div>
 
+        <a
+          href="#formulario"
+          className="mt-8 w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-colors"
+        >
+          <MaterialIcon name="arrow_downward" className="text-[18px]" />
+          Quiero registrarme
+        </a>
+
         <p className="font-body-md text-sm text-secondary mt-6 leading-relaxed">
           Ser afiliado no garantiza ningún ingreso. Lo que obtienes con
           seguridad es el precio de afiliado; cualquier resultado más allá de

@@ -18,7 +18,7 @@ export default function VideoSection() {
   if (videos.length === 0) return null;
 
   return (
-    <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20 md:pb-32">
       <div className="mb-10 md:mb-12 max-w-xl">
         <span className="font-label-caps text-label-caps text-secondary mb-2 block">
           EN VIDEO

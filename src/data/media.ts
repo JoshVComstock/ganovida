@@ -97,20 +97,14 @@ export interface VideoItem {
 
 /**
  * Videos que se muestran en la sección "En video".
- * Deja el array vacío ([]) y la sección desaparece sola.
+ * Con el array vacío ([]) la sección desaparece sola del home.
  *
- * ⚠️ REVISA el contenido de cada video antes de publicarlo: no debe hacer
- * promesas médicas. Lo ideal es reemplazarlos por videos tuyos.
+ * ⚠️ VACIADO A PROPÓSITO. Los videos que había eran de terceros: no sabemos
+ * qué afirmaciones hacen ni tenemos permiso para usarlos, y el reglamento de
+ * DXN responsabiliza al distribuidor por las afirmaciones que difunde.
+ *
+ * Cuando tengas tus propios videos, agrégalos así:
+ *   { id: "ID_DE_YOUTUBE", title: "Título", description: "Una línea." }
+ * El ID es lo que va después de ?v= en la URL de YouTube.
  */
-export const videos: VideoItem[] = [
-  {
-    id: "eGjUBsPM6To",
-    title: "Lingzhi Coffee 3 en 1",
-    description: "Conoce el café con Ganoderma más vendido de DXN.",
-  },
-  {
-    id: "3HSWZyNXvws",
-    title: "Lingzhi Black Coffee",
-    description: "El café negro con Ganoderma, sin azúcar.",
-  },
-];
+export const videos: VideoItem[] = [];

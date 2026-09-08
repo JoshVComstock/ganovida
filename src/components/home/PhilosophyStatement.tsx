@@ -1,7 +1,7 @@
 const stats = [
+  { value: "1–2 días", label: "Entrega en Cochabamba" },
+  { value: "Sin costo", label: "Envío incluido" },
   { value: "100%", label: "Original DXN" },
-  { value: "Delivery", label: "A domicilio" },
-  { value: "WhatsApp", label: "Atención directa" },
 ];
 
 /** Banner de filosofía de marca (fondo primary). */
